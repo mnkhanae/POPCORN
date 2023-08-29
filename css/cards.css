@@ -1,0 +1,25 @@
+#imgMovie{
+    width:250px;
+    height:300px;
+    object-fit: cover;
+    transition: transform 2s;
+}
+#imgMovie:hover{
+    transform:scale(1.1);
+}
+#titleCard{
+    font-family:'Quicksand', sans-serif;
+    font-size: 30px;
+    font-weight:600;
+    margin-top:2px;
+}
+#poster{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    gap:10px;
+}
+.container{
+    overflow:hidden;
+}
