@@ -7,28 +7,58 @@
     <link rel="stylesheet" href="./css/cards.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css">
 
-    <link rel="stylesheet" href="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
-    <script src="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.js"></script>
+
 </head>
 
 <body>
     <header>
-        <input type="text" id="searchInput" placeholder="Search for films...">
+        
     </header>
 
 
     <div id="slider">
         <!-- Slider-->
 
-        <section class="items">
-            <div class="carouselOfImages">
-                <!-- Images will be inserted here -->
-            </div>
-        </section>
+    <!-- For Movies -->
+    <!-- For Latest 2023 -->
+    <div class="carouselContainer">
+        <h2>Latest 2023</h2>
+        <div class="carouselOfLatest2023"></div>
+    </div>
+    <div class="carouselContainer">
+        <h2>Top Rated Movies</h2>
+        <div class="carouselOfTopRatedMovies"></div>
+    </div>
+    
+    
+    <div class="carouselContainer">
+        <h2>Upcoming Movies</h2>
+        <div class="carouselOfUpcomingMovies"></div>
+    </div>
+    <div class="carouselContainer">
+        <h2>Now Playing Movies</h2>
+        <div class="carouselOfNowPlayingMovies"></div>
+    </div>
+    
+    <!-- For TV Shows -->
+    <div class="carouselContainer">
+        <h2>Popular TV Shows</h2>
+        <div class="carouselOfPopularTV"></div>
+    </div>
+    <div class="carouselContainer">
+        <h2>Top Rated TV Shows</h2>
+        <div class="carouselOfTopRatedTV"></div>
+    </div>
+    <div class="carouselContainer">
+        <h2>On TV</h2>
+        <div class="carouselOfOnTV"></div>
+    </div>
+
 
 
 
@@ -36,12 +66,6 @@
 
     <main id="mainContent">
         <!-- Cards of films will go here -->
-        <div class="container">
-            <div id="poster">
-                <img src="./assets/movie.png"id="imgMovie" alt="imgMovie">
-                <p id="titleCard">Le sauveur</p>
-            </div>
-        </div>
     </main>
 
     <footer id="footer"></footer>

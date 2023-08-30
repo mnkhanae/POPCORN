@@ -1,2 +1,2 @@
 //card
-const imgMovie = document.querySelector("#imgMovie");
+const imgMovie = document.querySelector(".imgMovie");
