@@ -17,8 +17,30 @@
 
 <body>
     <header>
-        
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/logo_popcorn.png">
+            </div>
+            <div class="search" id="searchButton">
+                <i id="search_icon" class="fa-solid fa-magnifying-glass"></i>
+                <i id='close_icon' class="fa-solid fa-xmark"></i>
+    
+                </i>
+    
+            </div>
+            <div class="search-popup" id="searchPopup">
+                <div class="search-text" id="searchText"></div>
+                <input type="text" id="searchInput" placeholder="Search for a movie...">
+                <button id="searchMovieButton">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+    
+            </div>
+        </nav>
+    
+    
     </header>
+
 
     <main id="mainContent">
         <!-- Cards of films will go here -->
@@ -31,7 +53,7 @@
         <!-- Overlay Cards of films will go here -->
         <section class="modal hidden">
             <div class="moviePoster">
-                <img class="backdrop">
+                <img class="backdrop" alt="">
                 <button class="btn-close">X</button>
 
             </div>
@@ -93,7 +115,16 @@
 
     
 
-    <footer id="footer"></footer>
+    <footer id="footer">
+        <p>&copy; 2023 Popcorn Movies. All rights reserved.</p>
+        <div class="icons">
+            <img class="icon" src="assets/insta.png">
+            <img class="icon" src="assets/TWITER.png">
+            <img class="icon" alt="join our community" src="assets/facebook.png">
+        </div>
+        
+        </footer>
+    </footer>
 
     <script src="./js/cards.js"></script>
     <script src="./js/footer.js"></script>

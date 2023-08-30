@@ -4,26 +4,22 @@ async function fetchMovies(type, category, containerClass) {
         const response = await fetch(`https://api.themoviedb.org/3/${category}/${type}?api_key=${TMDB_AUTH_TOKEN}`);
         const data = await response.json();
         const carousel = document.querySelector(`.${containerClass}`);
-
         data.results.forEach(movie => {
-            const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-            const carouselImage = document.createElement('div');
-            carouselImage.classList.add('carouselImage');
-            carouselImage.setAttribute('id', movie.id);  // Add this line
+            if (movie.id) {
+                const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+                const carouselImage = document.createElement('div');
+                carouselImage.classList.add('carouselImage');
+                carouselImage.setAttribute('id', movie.id);
 
-            const imgElement = document.createElement('img');
-            imgElement.classList.add('imgMovie');
-            imgElement.setAttribute('src', imageUrl);
+                const imgElement = document.createElement('img');
+                imgElement.classList.add('imgMovie');
+                imgElement.setAttribute('src', imageUrl);
 
-            let imgMoviesdemo = document.querySelectorAll(".imgMovie");
+                carouselImage.appendChild(imgElement);
+                carousel.appendChild(carouselImage);
 
-            imgMoviesdemo.forEach(chaqueimgMovie => {
-                chaqueimgMovie.addEventListener("click", openModal);
-
-            });
-
-            carouselImage.appendChild(imgElement);
-            carousel.appendChild(carouselImage);
+            }
+            
         });
 
 
@@ -55,29 +51,24 @@ async function fetchMovies(type, category, containerClass) {
 }
 
 // Fetch Latest 2023 movies
-fetchMovies('popular', 'movie', 'carouselOfLatest2023', 2023);
-fetchMovies('top_rated', 'movie', 'carouselOfTopRatedMovies');
-fetchMovies('upcoming', 'movie', 'carouselOfUpcomingMovies');
-fetchMovies('now_playing', 'movie', 'carouselOfNowPlayingMovies');
+fetchMovies('popular', 'movie', 'carouselOfLatest2023', 2023).then(carouselHalim);
+fetchMovies('top_rated', 'movie', 'carouselOfTopRatedMovies').then(carouselHalim);
+fetchMovies('upcoming', 'movie', 'carouselOfUpcomingMovies').then(carouselHalim);
+fetchMovies('now_playing', 'movie', 'carouselOfNowPlayingMovies').then(carouselHalim);
 
 // Fetch different types of TV shows
-fetchMovies('popular', 'tv', 'carouselOfPopularTV');
-fetchMovies('top_rated', 'tv', 'carouselOfTopRatedTV');
-fetchMovies('on_the_air', 'tv', 'carouselOfOnTV');
-fetchMovies('airing_today', 'tv', 'carouselOfAiringToday');
+fetchMovies('popular', 'tv', 'carouselOfPopularTV').then(carouselHalim);
+fetchMovies('top_rated', 'tv', 'carouselOfTopRatedTV').then(carouselHalim);
+fetchMovies('on_the_air', 'tv', 'carouselOfOnTV').then(carouselHalim);
 
+function carouselHalim(){
+    const carousel = document.querySelectorAll('.carouselImage');
+    carousel.forEach(element => {
+        document.getElementById(element.id).addEventListener('click', () =>{
+            openModal(element.id);
+        })
+    })
+}
 
-document.addEventListener('click', function (e) {
-    if (e.target.closest('.carouselImage')) {
-        const movieId = e.target.closest('.carouselImage').getAttribute('data-id');
-        console.log('Clicked movie ID:', movieId);
-    }
-});
-
-
-// const openModaldemo = function () {
-//     modal.classList.remove("hidden");
-//     overlay.classList.remove("hidden");
-// };
 
 

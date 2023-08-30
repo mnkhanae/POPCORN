@@ -1,0 +1,16 @@
+footer {
+    background-color: black;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Adjust footer text color if needed */
+footer p {
+    color: white;
+}
+
+.icon {
+    color: white;
+
+}
