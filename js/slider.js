@@ -9,15 +9,23 @@ async function fetchMovies(type, category, containerClass) {
             const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
             const carouselImage = document.createElement('div');
             carouselImage.classList.add('carouselImage');
-            carouselImage.setAttribute('data-id', movie.id);  // Add this line
+            carouselImage.setAttribute('id', movie.id);  // Add this line
 
             const imgElement = document.createElement('img');
             imgElement.classList.add('imgMovie');
             imgElement.setAttribute('src', imageUrl);
 
+            let imgMoviesdemo = document.querySelectorAll(".imgMovie");
+
+            imgMoviesdemo.forEach(chaqueimgMovie => {
+                chaqueimgMovie.addEventListener("click", openModal);
+
+            });
+
             carouselImage.appendChild(imgElement);
             carousel.appendChild(carouselImage);
         });
+
 
         // Initialize Flickity
         const flkty = $(`.${containerClass}`).flickity({
@@ -65,3 +73,11 @@ document.addEventListener('click', function (e) {
         console.log('Clicked movie ID:', movieId);
     }
 });
+
+
+// const openModaldemo = function () {
+//     modal.classList.remove("hidden");
+//     overlay.classList.remove("hidden");
+// };
+
+

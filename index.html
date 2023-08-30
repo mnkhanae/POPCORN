@@ -20,6 +20,33 @@
         
     </header>
 
+    <main id="mainContent">
+        <!-- Cards of films will go here -->
+        <!-- <div class="container">
+            <div id="poster">
+                <img src="./assets/movie.png" class="imgMovie" alt="imgMovie">
+                <p id="titleCard">Le sauveur</p>
+            </div>
+        </div> -->
+        <!-- Overlay Cards of films will go here -->
+        <section class="modal hidden">
+            <div class="moviePoster">
+                <img class="backdrop">
+                <button class="btn-close">X</button>
+
+            </div>
+            <div class="MovieDetails">
+                <h2 id = "title"></h2>
+                <h3 id = "genre"></h3>
+                <p id = "overview"></p>
+                <h5 id = "vote"></h5>
+                <h5 id = "voteCount"></h5>
+                
+            </div>
+        </section>
+        <div class="overlay hidden"></div>
+    </main>
+
 
     <div id="slider">
         <!-- Slider-->
@@ -64,19 +91,7 @@
 
     </div>
 
-    <main id="mainContent">
-        <!-- Cards of films will go here -->
-        <div class="container">
-            <div id="poster">
-                <img src="./assets/movie.png" id="imgMovie" alt="imgMovie">
-                <p id="titleCard">Le sauveur</p>
-            </div>
-        </div>
-        <!-- Overlay Cards of films will go here -->
-        <section class="modal hidden">
-        </section>
-        <div class="overlay hidden"></div>
-    </main>
+    
 
     <footer id="footer"></footer>
 
