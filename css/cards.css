@@ -1,29 +1,104 @@
-.imgMovie {
-    object-fit: cover;
-    transition: transform 2s;
+#imgMovie {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 2s;
 }
 
-.imgMovie:hover {
-    transform: scale(1.1);
+#imgMovie:hover {
+  transform: scale(1.1);
 }
 
 #titleCard {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 30px;
-    font-weight: 600;
-    margin-top: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 2px;
 }
 
 #poster {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  gap: 10px;
 }
 
 .container {
-    max-width: 960px;
-    margin: auto;
-    overflow: visible;
+  overflow: hidden;
+}
+
+/* Card Overlay */
+/* Card modal */
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  width: 50%;
+  padding: 1.3rem;
+  min-height: 250px;
+  position: absolute;
+  right: 23%;
+  top: 12%;
+  background-color: rgba(10, 10, 10, 0.8);
+  z-index: 2;
+}
+
+/* movie poster part with close button */
+.modal .moviePoster {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.modal .btn-close {
+  position: absolute;
+  top: 2%;
+  left: 95%;
+  font-size: 28px;
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: none;
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn-close:hover {
+  transform: scale(1.2);
+}
+
+#backdrop {
+  width: 100%;
+}
+
+/* movie details */
+.MovieDetails {
+  display: block;
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+#title {
+  font-weight: 600;
+  font-size: 45px;
+}
+
+/* blurred background when card model is open */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
 }
