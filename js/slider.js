@@ -5,7 +5,7 @@ async function fetchMovies(type, category, containerClass) {
         const data = await response.json();
         const carousel = document.querySelector(`.${containerClass}`);
         data.results.forEach(movie => {
-            if (movie.id) {
+            if (movie.id && movie.poster_path) {
                 const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
                 const carouselImage = document.createElement('div');
                 carouselImage.classList.add('carouselImage');
@@ -51,20 +51,21 @@ async function fetchMovies(type, category, containerClass) {
 }
 
 // Fetch Latest 2023 movies
-fetchMovies('popular', 'movie', 'carouselOfLatest2023', 2023).then(carouselHalim);
-fetchMovies('top_rated', 'movie', 'carouselOfTopRatedMovies').then(carouselHalim);
-fetchMovies('upcoming', 'movie', 'carouselOfUpcomingMovies').then(carouselHalim);
-fetchMovies('now_playing', 'movie', 'carouselOfNowPlayingMovies').then(carouselHalim);
+fetchMovies('popular', 'movie', 'carouselOfLatest2023', 2023).then(carousel_slide);
+fetchMovies('top_rated', 'movie', 'carouselOfTopRatedMovies').then(carousel_slide);
+fetchMovies('upcoming', 'movie', 'carouselOfUpcomingMovies').then(carousel_slide);
+fetchMovies('now_playing', 'movie', 'carouselOfNowPlayingMovies').then(carousel_slide);
 
 // Fetch different types of TV shows
-fetchMovies('popular', 'tv', 'carouselOfPopularTV').then(carouselHalim);
-fetchMovies('top_rated', 'tv', 'carouselOfTopRatedTV').then(carouselHalim);
-fetchMovies('on_the_air', 'tv', 'carouselOfOnTV').then(carouselHalim);
+fetchMovies('popular', 'tv', 'carouselOfPopularTV').then(carousel_slide);
+fetchMovies('top_rated', 'tv', 'carouselOfTopRatedTV').then(carousel_slide);
+fetchMovies('on_the_air', 'tv', 'carouselOfOnTV').then(carousel_slide);
 
-function carouselHalim(){
+function carousel_slide(){
     const carousel = document.querySelectorAll('.carouselImage');
     carousel.forEach(element => {
         document.getElementById(element.id).addEventListener('click', () =>{
+            console.log(element);
             openModal(element.id);
         })
     })

@@ -10,20 +10,41 @@
         overflow: hidden;
         margin: 6px;
     }
+         .carouselImagesearch {
+            counter-increment: carousel-cell;
+            transition: transform 0.5s;
+            transform: scale(1);
+            overflow: hidden;
+            margin: 6px;
+            flex: 0 0 auto;
+        } 
     
-    .carouselImage img {
+    .carouselImagesearch img {
         height: 300px;
-    }
+    } 
+
+        .carouselImage img {
+            height: 300px;
+        }
     
     .carouselImage.is-selected {
         z-index: 10;
         transform: scale(1.5);
     }
     
+        /* .carouselImagesearch.is-selected {
+            z-index: 10;
+            transform: scale(1.5);
+        } */
     .carouselImage.nextToSelected {
         transform: scale(1.25);
         z-index: 5;
     }
+
+    .carouselImagesearch.nextToSelected {
+            transform: scale(1.25);
+            z-index: 5;
+        } 
     /*! Flickity v2.0.5
 https://flickity.metafizzy.co
 ---------------------------------------------- */
@@ -184,3 +205,11 @@ https://flickity.metafizzy.co
     .carouselContainer>h2 {
         color: beige;
     }
+
+
+.searchResultsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

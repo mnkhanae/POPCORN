@@ -1,6 +1,4 @@
 
-//card
-//const imgMovies = document.querySelectorAll(".imgMovie");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 //open the modal
@@ -11,9 +9,6 @@ const openModal = function (movieID) {
 
 };
 
-
-
-//addEventListener("click", openModal);
 //close the modal
 const closeModal = function () {
   modal.classList.add("hidden");
@@ -32,12 +27,10 @@ async function fetchMovieById(movieId) {
   }
 }
 
-//create the modal
 //card modal
 async function modalDOM(movieID){
 
   await fetchMovieById(movieID).then(data => {
-    console.log(JSON.stringify(data));
 
     const imgModal = document.getElementsByClassName('backdrop')[0];
 

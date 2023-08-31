@@ -36,12 +36,10 @@
                 <button id="searchMovieButton">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
-    
+               
             </div>
-        </nav>
-    
-    
-    </header>
+            </nav>
+        </header>
 
 
     <main id="mainContent">
@@ -70,6 +68,14 @@
         </section>
         <div class="overlay hidden"></div>
     </main>
+
+    <div class="searchResultsContainer">
+        <!-- Search results will be appended here -->
+    </div>
+
+    <!-- Add these lines for pagination -->
+    <button id="prevPageButton">Previous</button>
+    <button id="nextPageButton">Next</button>
 
 
     <div id="slider">
@@ -110,12 +116,7 @@
         <div class="carouselOfOnTV"></div>
     </div>
 
-
-
-
     </div>
-
-    
 
     <footer id="footer">
         <p>&copy; 2023 Popcorn Movies. All rights reserved.</p>
@@ -132,6 +133,7 @@
     <script src="./js/footer.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="./js/search.js"></script>
 </body>
 
 </html>
