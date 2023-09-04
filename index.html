@@ -4,6 +4,7 @@
 <head>
     <title>POPCORN MOVIE</title>
     <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/herosection.css">
     <link rel="stylesheet" href="./css/cards.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
@@ -40,8 +41,54 @@
             </div>
             </nav>
         </header>
-
-
+       <!-- Hero section -->
+       <div class="heroSection">
+        <div id="captioned-gallery">
+            <figure class="slider">
+              <figure>
+                <img src="/assets/retribution.jpg" alt>
+                <figcaption>
+                    <div class="playButtonF"><i class="fa-solid fa-play" style="color: #ffffff;"></i></div>
+                    <h1>Retribution (2023)</h1>
+                     <div class="category"><div class="redLine"></div>Movies</div>
+                    </figcaption>
+              </figure>
+              <figure>
+                <img src="/assets/Oppenheimer.jpg" alt>
+                <figcaption>
+                    <div class="playButtonF"><i class="fa-solid fa-play" style="color: #ffffff;"></i></div>
+                    <h1>Oppenheimer (2023)</h1>
+                    <div class="category"><div class="redLine"></div>Movies</div>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="/assets/bluebittle.jpg" alt>
+                <figcaption>
+                    <div class="playButtonF"><i class="fa-solid fa-play" style="color: #ffffff;"></i></div>
+                    <h1>Blue Beetle (2023)</h1>
+                    <div class="category"><div class="redLine"></div>Movies</div>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="/assets/Chicago-fire.jpg" alt>
+                <figcaption>
+                    <div class="playButtonF"><i class="fa-solid fa-play" style="color: #ffffff;"></i></div>
+                    <h1>Chicago fire (2012)</h1>
+                    <div class="category"><div class="redLine"></div>Tv Shows</div>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="/assets/big-bang.jpg" alt>
+                <figcaption>
+                    <div class="playButtonF"><i class="fa-solid fa-play" style="color: #ffffff;"></i></div>
+                    <h1>The Big Bang Theory (2007)</h1>
+                    <div class="category"><div class="redLine"></div>Tv Shows</div>
+                </figcaption>
+              </figure>
+            </figure>
+          </div>
+    </div>
+<section class="mainContent">
     <main id="mainContent">
         <!-- Cards of films will go here -->
         <!-- <div class="container">
@@ -51,22 +98,30 @@
             </div>
         </div> -->
         <!-- Overlay Cards of films will go here -->
-        <section class="modal hidden">
-            <div class="moviePoster">
-                <img class="backdrop" alt="">
-                <button class="btn-close">X</button>
+        <div class="modalContainer hidden">
+            <section class="modal hidden">
+                <div class="moviePoster">
+                    <div class="bgBlack"></div>
+                    <div class="playButton"><i class="fa-regular fa-circle-play"></i></div>
+                    <img class="backdrop" alt="">
+                    <button class="btn-close">X</button>
+                </div>
+                <div class="MovieDetails">
+                    <h2 id = "title"></h2>
+                    <h3 id = "genre"></h3>
+                    <p id = "overview"></p>
+                   <div class="rating"><h5 id = "vote"></h5><i class="fa-solid fa-star"></i></div>
+                   <div class="castVote"><h5 id = "voteCount"></h5><i class="fa-regular fa-thumbs-up firstThumb"></i></div>
+                   <div id="openVote">
+                   <div id="voteModal"></h5><i class="fa-regular fa-thumbs-up secondThumb"></i><i class="fa-regular fa-thumbs-down"></i></div>
+                    <i class="fa-regular fa-circle-xmark"></i>
+                   </div>
+                  
+                </div>
+            </section>
+        </div>
+        <div class="overlay hidden"> </div>
 
-            </div>
-            <div class="MovieDetails">
-                <h2 id = "title"></h2>
-                <h3 id = "genre"></h3>
-                <p id = "overview"></p>
-                <h5 id = "vote"></h5>
-                <h5 id = "voteCount"></h5>
-                
-            </div>
-        </section>
-        <div class="overlay hidden"></div>
     </main>
 
     <div class="searchResultsContainer">
@@ -74,8 +129,11 @@
     </div>
 
     <!-- Add these lines for pagination -->
-    <button id="prevPageButton">Previous</button>
-    <button id="nextPageButton">Next</button>
+    <div class="buttonPN">
+    <button id="prevPageButton"><span class="text"><i class="fa-solid fa-chevron-left"></i></span><span>Previous</span></button>
+    <button id="nextPageButton"><span class="text"><i class="fa-solid fa-chevron-right"></i></span><span>Next</span></button>
+    </div>
+    
 
 
     <div id="slider">
@@ -125,6 +183,8 @@
             <img class="icon" src="assets/TWITER.png">
             <img class="icon" alt="join our community" src="assets/facebook.png">
         </div>
+</section>
+ 
         
         </footer>
     </footer>

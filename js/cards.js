@@ -1,18 +1,48 @@
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
+const modalContainer = document.querySelector(".modalContainer")
+const openVote = document.querySelector("#openVote")
+const firstThumb = document.querySelector(".firstThumb")
+const closeRating = document.querySelector(".fa-circle-xmark")
+const thumbUp = document.querySelector(".secondThumb")
+const thumpDown = document.querySelector(".fa-thumbs-down")
 //open the modal
 const openModal = function (movieID) {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
+  modalContainer.classList.remove("hidden");
   modalDOM(movieID)
 
 };
-
+firstThumb.addEventListener('click',() =>{
+  openVote.style.display ="flex";
+  openVote.style.transition ="0.4s";
+})
+const closeModalRating = function () {
+  openVote.style.display ="none";
+  openVote.style.transition ="0.4s";
+};
+closeRating.addEventListener('click',closeModalRating)
+thumbUp.addEventListener('click',() => {
+  thumbUp.classList.add("hopping");
+  setTimeout(() => {
+    thumbUp.classList.remove("hopping");
+    closeModalRating();
+  }, 500); 
+})
+thumpDown.addEventListener('click',() => {
+  thumpDown.classList.add("hopping");
+  setTimeout(() => {
+    thumpDown.classList.remove("hopping");
+    closeModalRating();
+  }, 500); 
+})
 //close the modal
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
+  modalContainer.classList.add("hidden");
 };
 
 async function fetchMovieById(movieId) {

@@ -42,6 +42,25 @@ document.getElementById('searchInput').addEventListener('input', function () {
     currentQuery = document.getElementById('searchInput').value;
     currentPage = 1;
     fetchSearchResults(currentQuery, currentPage, 'searchResultsContainer').then(carousel_search);
+    if(currentQuery.length !== 0){
+        let SliderHome = document.querySelector('#slider');
+        SliderHome.classList.add('hidden');
+        let heroSection = document.querySelector('.heroSection');
+        heroSection.classList.add('hidden');
+        let mainContent = document.querySelector('.mainContent');
+        mainContent.style.marginTop ='150px',
+        buttonPn.style.display = 'block';
+    
+    }else{
+        let SliderHome = document.querySelector('#slider');
+        let heroSection = document.querySelector('.heroSection');
+        SliderHome.classList.remove('hidden');
+        heroSection.classList.remove('hidden');
+        let mainContent = document.querySelector('.mainContent');
+        mainContent.style.marginTop ='0px',
+        buttonPn.style.display = 'none';
+    }
+    
 });
 
 document.getElementById('nextPageButton').addEventListener('click', function () {
