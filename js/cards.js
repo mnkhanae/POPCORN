@@ -65,7 +65,13 @@ async function modalDOM(movieID){
     const imgModal = document.getElementsByClassName('backdrop')[0];
 
     imgModal.id = data.id;  // Set ID from data
-    imgModal.setAttribute('src', `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`);  // Set image src from data
+
+
+    if (data.backdrop_path === null){
+      imgModal.setAttribute('src', `https://hips.hearstapps.com/hmg-prod/images/abstract-glitch-background-404-royalty-free-illustration-1679362904.jpg`);  
+    }else{
+      imgModal.setAttribute('src', `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`);  // Set image src from data
+    }
 
     const titleModal = document.getElementById('title');
     titleModal.textContent = data.title;  // Set title from data

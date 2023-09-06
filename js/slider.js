@@ -5,20 +5,21 @@ async function fetchMovies(type, category, containerClass) {
         const data = await response.json();
         const carousel = document.querySelector(`.${containerClass}`);
         data.results.forEach(movie => {
-            if (movie.id && movie.poster_path) {
-                const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-                const carouselImage = document.createElement('div');
-                carouselImage.classList.add('carouselImage');
-                carouselImage.setAttribute('id', movie.id);
 
-                const imgElement = document.createElement('img');
-                imgElement.classList.add('imgMovie');
-                imgElement.setAttribute('src', imageUrl);
+                if (movie.id && movie.poster_path && movie.backdrop_path) {
+                    const imageUrl = `https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`;
+                    const carouselImage = document.createElement('div');
+                    carouselImage.classList.add('carouselImage');
+                    carouselImage.setAttribute('id', movie.id);
 
-                carouselImage.appendChild(imgElement);
-                carousel.appendChild(carouselImage);
+                    const imgElement = document.createElement('img');
+                    imgElement.classList.add('imgMovie');
+                    imgElement.setAttribute('src', imageUrl);
 
-            }
+                    carouselImage.appendChild(imgElement);
+                    carousel.appendChild(carouselImage);
+
+                }
             
         });
 
@@ -65,7 +66,6 @@ function carousel_slide(){
     const carousel = document.querySelectorAll('.carouselImage');
     carousel.forEach(element => {
         document.getElementById(element.id).addEventListener('click', () =>{
-            console.log(element);
             openModal(element.id);
         })
     })

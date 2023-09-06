@@ -8,7 +8,6 @@ async function fetchSearchResults(query, page, containerClass) {
         carousel.innerHTML = '';  // Clear existing content
 
         data.results.forEach(movie => {
-            if (movie.id && movie.poster_path) {
                 const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
                 const carouselImage = document.createElement('div');
                 carouselImage.classList.add('carouselImagesearch');
@@ -20,7 +19,6 @@ async function fetchSearchResults(query, page, containerClass) {
 
                 carouselImage.appendChild(imgElement);
                 carousel.appendChild(carouselImage);
-            }
         });
     } catch (error) {
         console.error("Error:", error);

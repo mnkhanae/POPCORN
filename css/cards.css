@@ -89,18 +89,20 @@ padding-right: 30px;
 .backdrop {
   width: 100%;
   z-index: 0;
+  
 }
 .bgBlack{
   position: absolute;
   /* opacity: 0.8; */
   width: 100%;
   height: 50%;
-  background-image: url('/assets/Untitled-1.png') ;
+  /*background-image: url('/assets/Untitled-1.png') ;*/
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 10;
   background-position: 0px 40px;
-  top: 55%;
+  top: 50%;
+  box-shadow: inset 0 -100px 100px -20px rgb(0, 0, 0);
 }
 /* movie details */
 .MovieDetails {
@@ -136,16 +138,17 @@ padding-right: 30px;
 }
 #openVote{
   position: absolute;
-  top: 45%;
+  top: 38%;
   display: flex;
   display: none;
   flex-direction: column;
-  background-image: url('/assets/Untitled-1.png') ;
+  /*background-image: url('/assets/Untitled-1.png') ;*/
   background-size: cover;
   background-position: 1000px -650px;
   width: 100%;
   height: 60%;
   z-index: 1000;
+  box-shadow: inset 0 -200px 100px -20px rgb(0, 0, 0);
 
 }
 .fa-circle-xmark{
