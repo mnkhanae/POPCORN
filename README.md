@@ -1,7 +1,7 @@
 # POPCORN - Site de films et de séries
 ![logo_popcorn](https://github.com/mnkhanae/POPCORN/assets/126266227/39dff182-f072-46e3-a405-afecc26867a9)
 
-Popcorn est un site de films et de vidéos. Il permet aux utilisateurs de rechercher, explorer et regarder une vaste sélection de films et de séries. Le contenu a été obtenu à partir d'une API externe.
+Popcorn est un site de films et de vidéos. Il permet aux utilisateurs de rechercher une vaste sélection de films et de séries. Le contenu a été obtenu à partir d'une API externe. Le but de ce projet était de travailler avec une api et d'apprendre à fetcher des informations.
 
 # Fonctionnalités
 - Recherche Intuitive : Recherchez facilement des films et des séries par titre.
