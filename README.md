@@ -18,6 +18,6 @@ Popcorn est un site de films et de vidéos. Il permet aux utilisateurs de recher
 - TMDB pour obtenir les informations des films et des séries, telles que le titre, l'image, la description, ...
 
 # Auteurs
-Abderrahim Khadri (username: abde109)
-Imane ELBakir (username: imanebk)
-Hanae Manekoudi (username: mnkhanae)
+- Abderrahim Khadri (username: abde109)
+- Imane ELBakir (username: imanebk)
+- Hanae Manekoudi (username: mnkhanae)
